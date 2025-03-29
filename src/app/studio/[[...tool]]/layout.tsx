@@ -3,14 +3,14 @@ export const metadata = {
   description: 'Content management system for Artemova Beauty',
 }
 
-export default function RootLayout({
+export default function StudioLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  )
+    <div className="h-screen overflow-hidden" suppressHydrationWarning>
+      {children}
+    </div>
+  );
 } 

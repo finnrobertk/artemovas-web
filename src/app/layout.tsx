@@ -1,31 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Artemova&apos;s Beauty - Profesjonell skjønnhetssalong",
-  description: "Velkommen til Artemova&apos;s Beauty - Din profesjonelle skjønnhetssalong for øyevipper, ansiktsbehandling og permanent makeup.",
+  title: "Artemova's Beauty",
+  description: "Velkommen til Artemova's Beauty - Din ekspert innen øyevipper, ansiktsbehandling og skjønnhetskurs.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="nb">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="nb" suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning>
         <Navigation />
         <main>{children}</main>
         <footer className="bg-primary text-white py-8 mt-auto">
