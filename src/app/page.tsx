@@ -5,18 +5,18 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center">
+      <section className="relative h-[80vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-bg.jpg"
+            src="/images/eyelash-bg.jpg"
             alt="Artemova&apos;s Beauty Salon"
             fill
             className="object-cover brightness-50"
             priority
           />
         </div>
-        <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+        <div className="relative z-10 text-left text-white px-4 w-1/2 pl-12">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-secondary">
             Velkommen til Artemova&apos;s Beauty
           </h1>
           <p className="text-xl md:text-2xl mb-8">
@@ -26,7 +26,7 @@ export default function Home() {
             href="/tjenester"
             className="btn-primary text-lg px-8 py-3 rounded-full"
           >
-            Se våre tjenester
+            Book time
           </Link>
         </div>
       </section>
