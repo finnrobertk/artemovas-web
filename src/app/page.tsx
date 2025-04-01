@@ -24,7 +24,7 @@ export default function Home() {
           </p>
           <Link
             href="/tjenester"
-            className="btn-primary text-lg px-8 py-3 rounded-full"
+            className="btn-primary"
           >
             Book time
           </Link>
