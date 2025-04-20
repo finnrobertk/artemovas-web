@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="nb">
-      <body className="font-sans antialiased">
+      <body suppressHydrationWarning className="font-sans antialiased">
         <div className="flex flex-col">
           <Navigation />
           <SimpleSeparator className="-mt-[1px] mb-0" height={1} />

@@ -25,14 +25,15 @@ export default defineType({
     }),
     defineField({
       name: 'duration',
-      title: 'Duration',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
+      title: 'Duration (minutes)',
+      type: 'number',
+      validation: (Rule) => Rule.required().min(0),
     }),
     defineField({
       name: 'category',
       title: 'Category',
-      type: 'string',
+      type: 'reference',
+      to: [{ type: 'kategori' }],
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -44,4 +45,11 @@ export default defineType({
       },
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'category.title',
+      media: 'image',
+    },
+  },
 }) 

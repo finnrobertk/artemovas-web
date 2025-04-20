@@ -4,13 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { FancySeparator } from "@/components/Separator";
 
-const servicesQuery = groq`*[_type == "behandling"] | order(category asc) {
+const servicesQuery = groq`*[_type == "behandling"] | order(category->order asc) {
   _id,
   title,
   description,
   price,
   duration,
-  category,
+  "category": category->title,
+  "categorySlug": category->slug.current,
   "imageUrl": image.asset->url
 }`;
 

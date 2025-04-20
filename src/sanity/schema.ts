@@ -1,9 +1,16 @@
 import { type SchemaTypeDefinition } from 'sanity';
-import courseSchema from './schemaTypes/course';
-import behandlingSchema from './schemaTypes/behandling';
-import serviceSchema from './schemaTypes/service';
-import productSchema from './schemaTypes/product';
+import behandling from './schemaTypes/behandling';
+import kategori from './schemaTypes/kategori';
+import service from './schemaTypes/service';
+import product from './schemaTypes/product';
+import course from './schemaTypes/course';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [courseSchema, behandlingSchema, serviceSchema, productSchema],
+  types: [
+    behandling,
+    kategori,
+    service,
+    product,
+    course,
+  ],
 }; 

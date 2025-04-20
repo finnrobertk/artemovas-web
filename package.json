@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.5",
-    "@sanity/client": "^6.28.3",
     "@sanity/icons": "^3.7.0",
     "@sanity/image-url": "^1.1.0",
     "@vercel/speed-insights": "^1.2.0",
@@ -26,16 +25,19 @@
     "@eslint/eslintrc": "^3",
     "@next/bundle-analyzer": "^15.2.4",
     "@sanity/cli": "^3.81.0",
+    "@sanity/client": "^6.28.3",
     "@sanity/types": "^3.81.0",
     "@sanity/vision": "^3.81.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "10.4.17",
+    "dotenv": "^16.5.0",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
     "postcss": "8.4.35",
     "tailwindcss": "3.4.1",
+    "tsx": "^4.19.3",
     "typescript": "^5"
   }
 }
