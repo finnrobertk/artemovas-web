@@ -1,3 +1,5 @@
+@import "@fontsource/inter/index.css"; /* eller @fontsource/inter/index.css for statisk vekter */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

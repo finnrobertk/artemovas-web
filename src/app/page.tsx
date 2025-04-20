@@ -1,3 +1,4 @@
+import { SimpleSeparator } from "@/components/Separator";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -31,11 +32,10 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="h-5px bg-gold-simple w-full my-8"></div>
       {/* Services Preview */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="section-title">Våre Tjenester</h2>
+          <h2 className="section-title font-sans font-thin text-gold uppercase">Våre behandlinger</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-accent p-6 rounded-lg shadow-lg">
               <h3 className="text-xl font-semibold text-text mb-4">Øyevipper</h3>
@@ -65,7 +65,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="section-title">Om Oss</h2>
             <p className="text-text mb-8">
-              Hos Artemova&apos;s Beauty er vi dedikert til å gi deg den beste skjønnhetsbehandlingen. 
+              Hos Artemova&apos;s Beauty er vi dedikert til å gi deg den beste skjønnhetsbehandlingen.
               Med vår erfaring og ekspertise sikrer vi at du får resultater du vil elske.
             </p>
             <Link

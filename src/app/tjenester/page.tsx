@@ -37,11 +37,11 @@ export default async function ServicesPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-primary-default mb-8">Våre tjenester</h1>
+      <h1 className="text-4xl font-sans font-bold font-thin text-gold uppercase mb-8">Våre tjenester</h1>
       
       {Object.entries(servicesByCategory).map(([category, categoryServices]) => (
         <div key={category} className="mb-12">
-          <h2 className="text-2xl font-semibold text-primary-default mb-6">
+          <h2 className="text-2xl font-sans text-primary-default mb-6">
             {category.charAt(0).toUpperCase() + category.slice(1)}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
+import { SimpleSeparator } from "@/components/Separator";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,8 +20,11 @@ export default function RootLayout({
   return (
     <html lang="nb" suppressHydrationWarning>
       <body className={inter.className} suppressHydrationWarning>
-        <Navigation />
-        <main>{children}</main>
+        <div className="flex flex-col">
+          <Navigation />
+          <SimpleSeparator className="-mt-[1px] mb-0" height={1} />
+          <main>{children}</main>
+        </div>
         <footer className="bg-primary text-white py-8 mt-auto">
           <div className="container mx-auto px-4">
             <p className="text-center">&copy; {new Date().getFullYear()} Artemova&apos;s Beauty. Alle rettigheter forbeholdt.</p>

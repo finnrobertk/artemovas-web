@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 const navigation = [
   { name: 'Hjem', href: '/' },
-  { name: 'Tjenester', href: '/tjenester' },
+  { name: 'Behandlinger', href: '/tjenester' },
   { name: 'Kurs', href: '/kurs' },
   { name: 'Produkter', href: '/produkter' },
 ];
@@ -18,15 +18,16 @@ export default function Navigation() {
   return (
     <nav className="bg-primary">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center h-16">
+          {/* Logo - Left */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-secondary text-xl font-bold">
+            <Link href="/" className="text-secondary font-sans text-xl font-bold">
               Artemova&apos;s Beauty
             </Link>
           </div>
           
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden ml-auto">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-primary/80 focus:outline-none"
@@ -44,24 +45,30 @@ export default function Navigation() {
             </button>
           </div>
 
-          {/* Desktop menu */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+          {/* Desktop menu - Centered */}
+          <div className="hidden md:flex flex-1 justify-center">
+            <div className="flex items-baseline space-x-8">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`px-3 py-2 rounded-md text-sm font-medium ${
+                  className={`px-3 py-2 text-sm font-medium relative ${
                     pathname === item.href
-                      ? 'bg-secondary text-white'
-                      : 'text-white hover:bg-primary/80'
+                      ? 'text-secondary'
+                      : 'text-white hover:text-secondary transition-colors duration-200'
                   }`}
                 >
                   {item.name}
+                  {pathname === item.href && (
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-secondary" />
+                  )}
                 </Link>
               ))}
             </div>
           </div>
+
+          {/* Empty div for symmetry */}
+          <div className="hidden md:block flex-shrink-0 w-[200px]" />
         </div>
 
         {/* Mobile menu */}
@@ -71,14 +78,17 @@ export default function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                className={`block px-3 py-2 text-base font-medium relative ${
                   pathname === item.href
-                    ? 'bg-secondary text-white'
-                    : 'text-white hover:bg-primary/80'
+                    ? 'text-secondary'
+                    : 'text-white hover:text-secondary transition-colors duration-200'
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
+                {pathname === item.href && (
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-secondary" />
+                )}
               </Link>
             ))}
           </div>
