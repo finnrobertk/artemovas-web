@@ -1,11 +1,8 @@
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import { SimpleSeparator } from "@/components/Separator";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Artemova's Beauty",
@@ -18,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="nb" suppressHydrationWarning>
-      <body className={inter.className} suppressHydrationWarning>
+    <html lang="nb">
+      <body className="font-sans antialiased">
         <div className="flex flex-col">
           <Navigation />
           <SimpleSeparator className="-mt-[1px] mb-0" height={1} />

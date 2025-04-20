@@ -24,7 +24,7 @@ export default function Home() {
             Din profesjonelle skjønnhetssalong for øyevipper, ansiktsbehandling og permanent makeup
           </p>
           <Link
-            href="/tjenester"
+            href="/behandlinger"
             className="btn-primary"
           >
             Book time

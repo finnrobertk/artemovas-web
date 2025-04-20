@@ -34,7 +34,7 @@ export const FancySeparator: FC<SeparatorProps> = ({ className = '', text, heigh
       style={{ height: height ? (typeof height === 'number' ? `${height}px` : height) : '1px' }}
     />
     {text && (
-      <span className="text-text font-serif whitespace-nowrap">
+      <span className="text-text font-sans whitespace-nowrap">
         {text}
       </span>
     )}

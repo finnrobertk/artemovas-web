@@ -17,6 +17,13 @@ export interface Service {
   category: Category;
 }
 
+export interface Behandling {
+  _id: string;
+  title: string;
+  description: string;
+  price: number;
+}
+
 export interface Course {
   _id: string;
   title: string;

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FancySeparator } from "@/components/Separator";
 
-const servicesQuery = groq`*[_type == "service"] | order(category asc) {
+const servicesQuery = groq`*[_type == "behandling"] | order(category asc) {
   _id,
   title,
   description,
@@ -50,11 +50,11 @@ export default async function ServicesPage() {
           />
         </div>
         <div className="relative z-10 text-center">
-          <h1 className="text-5xl md:text-6xl font-serif font-bold mb-4 text-white">
-            Våre Tjenester
+          <h1 className="text-5xl md:text-6xl font-sans font-bold mb-4 text-white">
+            Våre Behandlinger
           </h1>
           <p className="text-xl text-text-soft max-w-2xl mx-auto px-4">
-            Opplev profesjonell skjønnhetsbehandling med våre eksklusive tjenester
+            Opplev profesjonell skjønnhetsbehandling med våre eksklusive behandlinger
           </p>
         </div>
       </section>
@@ -83,7 +83,7 @@ export default async function ServicesPage() {
                       </div>
                     )}
                     <div className="space-y-4">
-                      <h3 className="text-xl font-serif font-semibold text-text">
+                      <h3 className="text-xl font-sans font-semibold text-text">
                         {service.title}
                       </h3>
                       <p className="text-text-soft/80">
@@ -110,11 +110,11 @@ export default async function ServicesPage() {
       <section className="py-16 bg-primary relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-text mb-6">
+            <h2 className="text-3xl md:text-4xl font-sans font-bold text-text mb-6">
               Klar til å bestille time?
             </h2>
             <p className="text-text-soft mb-8 text-lg">
-              Ta kontakt med oss for å booke din neste behandling eller still oss spørsmål om våre tjenester.
+              Ta kontakt med oss for å booke din neste behandling eller still oss spørsmål om våre behandlinger.
             </p>
             <Link
               href="/kontakt"

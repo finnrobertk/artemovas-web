@@ -1,4 +1,7 @@
-@import "@fontsource/inter/index.css"; /* eller @fontsource/inter/index.css for statisk vekter */
+@import '@fontsource/inter/400.css'; /* Regular weight */
+@import '@fontsource/inter/500.css'; /* Medium weight */
+@import '@fontsource/inter/600.css'; /* Semi-bold weight */
+@import '@fontsource/inter/700.css'; /* Bold weight */
 
 @tailwind base;
 @tailwind components;
@@ -10,7 +13,7 @@
   }
 
   h1, h2, h3, h4 {
-    @apply font-serif text-text;
+    @apply font-sans text-text;
   }
 
   a {
@@ -36,7 +39,7 @@
   }
 
   .section-title {
-    @apply text-4xl sm:text-5xl font-serif font-bold text-text mb-10 tracking-wide;
+    @apply text-4xl sm:text-5xl font-sans font-bold text-text mb-10 tracking-wide;
   }
 
   .card {
