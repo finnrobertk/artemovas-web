@@ -49,7 +49,7 @@ export default async function ProductsPage() {
               {products.map((product) => (
                 <div
                   key={product._id}
-                  className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+                  className="bg-accent rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
                 >
                   <div className="relative h-48">
                     <Image

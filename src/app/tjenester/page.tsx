@@ -48,7 +48,7 @@ export default async function ServicesPage() {
             {categoryServices.map((service) => (
               <div
                 key={service._id}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                className="bg-accent rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
               >
                 {service.imageUrl && (
                   <div className="relative h-48">

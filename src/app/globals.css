@@ -4,7 +4,15 @@
 
 @layer base {
   body {
-    @apply bg-background text-text;
+    @apply bg-background text-text-soft font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif text-text;
+  }
+
+  a {
+    @apply text-text hover:opacity-80 transition-colors duration-200;
   }
 }
 
@@ -12,20 +20,28 @@
   .container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
   .btn {
-    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-300;
   }
-  
+
   .btn-primary {
-    @apply bg-primary text-white hover:bg-primary/90 whitespace-nowrap px-6 py-3 rounded-full text-base sm:text-lg inline-flex items-center justify-center;
+    @apply bg-accent text-background hover:opacity-90 px-6 py-3 rounded-full text-base sm:text-lg inline-flex items-center justify-center;
   }
-  
+
   .btn-secondary {
-    @apply bg-secondary text-white hover:bg-secondary/90 whitespace-nowrap px-6 py-3 rounded-full text-base sm:text-lg inline-flex items-center justify-center;
+    @apply bg-secondary text-background hover:bg-secondary/90 px-6 py-3 rounded-full text-base sm:text-lg inline-flex items-center justify-center;
   }
-  
+
   .section-title {
-    @apply text-3xl font-bold text-primary mb-8;
+    @apply text-4xl sm:text-5xl font-serif font-bold text-text mb-10 tracking-wide;
+  }
+
+  .card {
+    @apply bg-primary text-text-soft p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-border;
+  }
+
+  .nav-link {
+    @apply text-text font-medium hover:underline transition-colors duration-200;
   }
 }

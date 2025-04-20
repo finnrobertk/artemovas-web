@@ -42,7 +42,7 @@ export default async function CoursesPage() {
         {courses.map((course) => (
           <div
             key={course._id}
-            className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+            className="bg-accent rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
           >
             {course.imageUrl && (
               <div className="relative h-48">

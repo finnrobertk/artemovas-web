@@ -31,25 +31,26 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="h-5px bg-gold-simple w-full my-8"></div>
       {/* Services Preview */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="section-title">Våre Tjenester</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold text-primary mb-4">Øyevipper</h3>
+            <div className="bg-accent p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-semibold text-text mb-4">Øyevipper</h3>
               <p className="text-text">
                 Profesjonell øyevippeforlengelse og styling for naturlige og vakre øyevipper.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold text-primary mb-4">Ansiktsbehandling</h3>
+            <div className="bg-accent p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-semibold text-text mb-4">Ansiktsbehandling</h3>
               <p className="text-text">
                 Skreddersydde ansiktsbehandlinger for din hudtype og dine behov.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold text-primary mb-4">Permanent Makeup</h3>
+            <div className="bg-accent p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-semibold text-text mb-4">Permanent Makeup</h3>
               <p className="text-text">
                 Profesjonell permanent makeup for naturlige og varige resultater.
               </p>
@@ -59,7 +60,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-accent/20">
+      <section className="py-20 bg-background-light">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="section-title">Om Oss</h2>
