@@ -44,6 +44,12 @@ export default defineType({
         hotspot: true,
       },
     }),
+    defineField({
+      name: 'simplyBookService',
+      title: 'SimplyBook Service ID',
+      type: 'string',
+      description: 'The service ID from SimplyBook.me for this treatment'
+    }),
   ],
   preview: {
     select: {

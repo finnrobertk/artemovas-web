@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import { SimpleSeparator } from "@/components/Separator";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Artemova's Beauty",
@@ -16,6 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="nb">
+      <head>
+        <Script
+          src="//widget.simplybook.me/v2/widget/widget.js"
+          strategy="beforeInteractive"
+        />
+      </head>
       <body suppressHydrationWarning className="font-sans antialiased">
         <div className="flex flex-col">
           <Navigation />

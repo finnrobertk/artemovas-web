@@ -13,7 +13,8 @@ const servicesQuery = groq`*[_type == "kategori"] | order(order asc) {
     title,
     description,
     price,
-    duration
+    duration,
+    simplyBookService
   }
 }`;
 
@@ -23,6 +24,7 @@ interface Behandling {
   description: string;
   price: number;
   duration: number;
+  simplyBookService?: string;
 }
 
 interface Category {
