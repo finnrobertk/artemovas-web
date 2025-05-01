@@ -18,8 +18,13 @@ export default function RootLayout({
   return (
     <html lang="nb">
       <head>
+        {/*<script*/}
+        {/*    type="text/javascript"*/}
+        {/*    src="https://simplybook.me/v2/widget.js"*/}
+        {/*></script>*/}
+        {/*<script src="https://widget.simplybook.me/v2/widget/widget.js"></script>*/}
         <Script
-          src="//widget.simplybook.me/v2/widget/widget.js"
+          src="https://widget.simplybook.it/v2/widget/widget.js"
           strategy="beforeInteractive"
         />
       </head>

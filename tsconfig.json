@@ -22,6 +22,12 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "../../Library/Application Support/JetBrains/IntelliJIdea2025.1/javascript/extLibs/http_widget.simplybook.me_v2_widget_widget.js"
+  ],
   "exclude": ["node_modules"]
 }
