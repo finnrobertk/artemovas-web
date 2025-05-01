@@ -1,6 +1,7 @@
 'use client';
 
 import {useState, useRef} from "react";
+import BookingButton from "@/components/BookingButton";
 
 interface Behandling {
     _id: string;
@@ -28,71 +29,71 @@ export function CategorySection({category}: { category: Category }) {
     const [showBookingWidget, setShowBookingWidget] = useState(false);
     const widgetContainerRef = useRef<HTMLDivElement>(null);
 
-    const handleBooking = (behandling: Behandling) => {
-        console.log("handleBooking: ", behandling);
-        console.log("Window.SimplybookWidget available:", typeof window !== 'undefined' && !!window.SimplybookWidget);
-
-        if (!behandling.simplyBookService) {
-            console.error('No SimplyBook service ID provided for treatment:', behandling.title);
-            return;
-        }
-
-        if (typeof window === 'undefined') {
-            console.error('Window object not available');
-            return;
-        }
-
-        if (!window.SimplybookWidget) {
-            console.error('SimplyBook widget not loaded. Check if the script is properly loaded.');
-            return;
-        }
-
-        setShowBookingWidget(true);
-
-        // Wait for the next tick to ensure the container is in the DOM
-        setTimeout(() => {
-            try {
-                console.log('Initializing SimplyBook widget with service ID:', behandling.simplyBookService);
-                new window.SimplybookWidget({
-                    "widget_type": "iframe",
-                    "url": "https://artemovasbeauty.simplybook.it",
-                    "theme": "concise",
-                    "theme_settings": {
-                        "timeline_show_end_time": "1",
-                        "timeline_modern_display": "1",
-                        "sb_base_color": "#B4833E",
-                        "display_item_mode": "block",
-                        "booking_nav_bg_color": "#1A1A1A",
-                        "body_bg_color": "#1A1A1A",
-                        "sb_review_image": "",
-                        "dark_font_color": "#ffffff",
-                        "light_font_color": "#ffffff",
-                        "btn_color_1": "#B4833E",
-                        "sb_company_label_color": "#ffffff",
-                        "hide_img_mode": "0",
-                        "show_sidebar": "1",
-                        "sb_busy": "#dad2ce",
-                        "sb_available": "#B4833E"
-                    },
-                    "timeline": "modern",
-                    "datepicker": "top_calendar",
-                    "is_rtl": false,
-                    "app_config": {
-                        "predefined": {
-                            "service": behandling.simplyBookService
-                        },
-                        "allow_switch_to_ada": 0,
-                        "padding_days": 0,
-                        "show_progress_bar": 1
-                    },
-                    "container": widgetContainerRef.current
-                });
-                console.log('SimplyBook widget initialized successfully');
-            } catch (error) {
-                console.error('Error initializing SimplyBook widget:', error);
-            }
-        }, 0);
-    };
+    // const handleBooking = (behandling: Behandling) => {
+    //     console.log("handleBooking: ", behandling);
+    //     console.log("Window.SimplybookWidget available:", typeof window !== 'undefined' && !!window.SimplybookWidget);
+    //
+    //     if (!behandling.simplyBookService) {
+    //         console.error('No SimplyBook service ID provided for treatment:', behandling.title);
+    //         return;
+    //     }
+    //
+    //     if (typeof window === 'undefined') {
+    //         console.error('Window object not available');
+    //         return;
+    //     }
+    //
+    //     if (!window.SimplybookWidget) {
+    //         console.error('SimplyBook widget not loaded. Check if the script is properly loaded.');
+    //         return;
+    //     }
+    //
+    //     setShowBookingWidget(true);
+    //
+    //     // Wait for the next tick to ensure the container is in the DOM
+    //     setTimeout(() => {
+    //         try {
+    //             console.log('Initializing SimplyBook widget with service ID:', behandling.simplyBookService);
+    //             new window.SimplybookWidget({
+    //                 "widget_type": "iframe",
+    //                 "url": "https://artemovasbeauty.simplybook.it",
+    //                 "theme": "concise",
+    //                 "theme_settings": {
+    //                     "timeline_show_end_time": "1",
+    //                     "timeline_modern_display": "1",
+    //                     "sb_base_color": "#B4833E",
+    //                     "display_item_mode": "block",
+    //                     "booking_nav_bg_color": "#1A1A1A",
+    //                     "body_bg_color": "#1A1A1A",
+    //                     "sb_review_image": "",
+    //                     "dark_font_color": "#ffffff",
+    //                     "light_font_color": "#ffffff",
+    //                     "btn_color_1": "#B4833E",
+    //                     "sb_company_label_color": "#ffffff",
+    //                     "hide_img_mode": "0",
+    //                     "show_sidebar": "1",
+    //                     "sb_busy": "#dad2ce",
+    //                     "sb_available": "#B4833E"
+    //                 },
+    //                 "timeline": "modern",
+    //                 "datepicker": "top_calendar",
+    //                 "is_rtl": false,
+    //                 "app_config": {
+    //                     "predefined": {
+    //                         "service": behandling.simplyBookService
+    //                     },
+    //                     "allow_switch_to_ada": 0,
+    //                     "padding_days": 0,
+    //                     "show_progress_bar": 1
+    //                 },
+    //                 "container": widgetContainerRef.current
+    //             });
+    //             console.log('SimplyBook widget initialized successfully');
+    //         } catch (error) {
+    //             console.error('Error initializing SimplyBook widget:', error);
+    //         }
+    //     }, 0);
+    // };
 
     return (
         <div className="mb-8 last:mb-0">
@@ -128,21 +129,22 @@ export function CategorySection({category}: { category: Category }) {
                                 </div>
                             </div>
 
-                            <button
-                                onClick={() => handleBooking(behandling)}
-                                className="flex items-center gap-2 bg-gold hover:bg-secondary text-background font-semibold px-6 py-2 rounded-lg transition-colors duration-300"
-                            >
-                                <svg
-                                    className="w-5 h-5"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                                          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                                </svg>
-                                Book Time
-                            </button>
+                            {/*<button*/}
+                            {/*    onClick={() => handleBooking(behandling)}*/}
+                            {/*    className="flex items-center gap-2 bg-gold hover:bg-secondary text-background font-semibold px-6 py-2 rounded-lg transition-colors duration-300"*/}
+                            {/*>*/}
+                            {/*    <svg*/}
+                            {/*        className="w-5 h-5"*/}
+                            {/*        fill="none"*/}
+                            {/*        viewBox="0 0 24 24"*/}
+                            {/*        stroke="currentColor"*/}
+                            {/*    >*/}
+                            {/*        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}*/}
+                            {/*              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>*/}
+                            {/*    </svg>*/}
+                            {/*    Book Time*/}
+                            {/*</button>*/}
+                            <BookingButton serviceId={behandling.simplyBookService ?? ''} />
                         </div>
                     ))}
                 </div>

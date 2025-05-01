@@ -1,6 +1,11 @@
-import {useEffect, useState} from 'react';
+import { useState, useEffect } from 'react';
 
-const BookingButton = () => {
+// Definer props-typen
+interface BookingButtonProps {
+    serviceId: string;
+}
+
+const BookingButton: React.FC<BookingButtonProps> = ({ serviceId }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const openModal = () => {
@@ -12,7 +17,7 @@ const BookingButton = () => {
     };
 
     useEffect(() => {
-        // Dynamisk laste inn SimplyBook widget-skriptet
+        // Dynamisk laste inn SimplyBook widget-skriptet kun én gang per komponent
         const script = document.createElement('script');
         script.src = "//widget.simplybook.it/v2/widget/widget.js";
         script.type = "text/javascript";
@@ -20,10 +25,10 @@ const BookingButton = () => {
         document.body.appendChild(script);
 
         script.onload = () => {
-            // Når scriptet er lastet, initialiser widgeten
+            // Når scriptet er lastet, initialiser widgeten for den spesifikke tjenesten
             new SimplybookWidget({
                 "widget_type": "iframe",
-                "url": "https://artemovasbeauty.simplybook.it",
+                "url": `https://artemovasbeauty.simplybook.it/?service=${serviceId}`,
                 "theme": "concise",
                 "theme_settings": {
                     "timeline_hide_unavailable": "1",
@@ -50,7 +55,9 @@ const BookingButton = () => {
                 "app_config": {
                     "clear_session": 0,
                     "allow_switch_to_ada": 0,
-                    "predefined": []
+                    "predefined": {
+                        "service": serviceId
+                    }
                 }
             });
         };
@@ -59,7 +66,7 @@ const BookingButton = () => {
             // Rydd opp etter at komponenten blir fjernet (fjerne scriptet hvis nødvendig)
             document.body.removeChild(script);
         };
-    }, []);
+    }, [serviceId]);
 
     return (
         <div>
@@ -84,8 +91,8 @@ const BookingButton = () => {
                         <div id="sb-widget-container">
                             {/* Just here for the widget to be loaded */}
                             <iframe
-                                title="SimplyBook.me booking widget"
-                                src="https://artemovasbeauty.simplybook.it"
+                                title={`SimplyBook.me booking widget for service ${serviceId}`}
+                                src={`https://artemovasbeauty.simplybook.it/?service=${serviceId}`}
                                 width="100%"
                                 height="400px"
                                 frameBorder="0"
