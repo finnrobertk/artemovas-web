@@ -7,8 +7,8 @@ import { useState } from 'react';
 const navigation = [
   { name: 'Hjem', href: '/' },
   { name: 'Behandlinger', href: '/behandlinger' },
-  { name: 'Kurs', href: '/kurs' },
-  { name: 'Produkter', href: '/produkter' },
+  // { name: 'Kurs', href: '/kurs' },
+  // { name: 'Produkter', href: '/produkter' },
 ];
 
 export default function Navigation() {
