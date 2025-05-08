@@ -1,6 +1,6 @@
-import { SimpleSeparator } from "@/components/Separator";
 import Image from "next/image";
 import Link from "next/link";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
 
 export default function Home() {
   return (
@@ -17,11 +17,11 @@ export default function Home() {
           />
         </div>
         <div className="relative z-10 text-left text-white px-4 w-1/2 pl-12">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-secondary">
-            Velkommen til Artemova&apos;s Beauty
+          <h1 className="text-5xl md:text-6xl font-sans mb-6 text-secondary">
+            Skjønnhetstjenester tilpasset deg
           </h1>
           <p className="text-xl md:text-2xl mb-8">
-            Din profesjonelle skjønnhetssalong for øyevipper, ansiktsbehandling og permanent makeup
+            Spesialist på vipper og permanent makeup – for deg som verdsetter presisjon, kvalitet og varige resultater. Skreddersydde behandlinger utført med omtanke og profesjonalitet.
           </p>
           <Link
             href="/behandlinger"
@@ -31,6 +31,8 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      <TestimonialCarousel />
 
       {/* Services Preview */}
       <section className="py-20 bg-background">

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from "next/image";
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
@@ -21,8 +22,15 @@ export default function Navigation() {
         <div className="flex items-center h-16">
           {/* Logo - Left */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-secondary font-sans text-xl font-bold">
-              Artemova&apos;s Beauty
+            <Link href="/">
+              {/* Juster width/height etter behov */}
+              <Image
+                  src="/images/logo.png"
+                  alt="Logo"
+                  width={300}
+                  height={100}
+                  priority
+              />
             </Link>
           </div>
           
