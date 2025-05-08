@@ -1,9 +1,7 @@
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import type { Metadata } from "next";
+import type {Metadata} from "next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
-import { SimpleSeparator } from "@/components/Separator";
-import Script from "next/script";
+import {SimpleSeparator} from "@/components/Separator";
 
 export const metadata: Metadata = {
   title: "Artemova's Beauty",
