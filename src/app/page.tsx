@@ -24,7 +24,7 @@ export default function Home() {
             Spesialist på vipper og permanent makeup – for deg som verdsetter presisjon, kvalitet og varige resultater. Skreddersydde behandlinger utført med omtanke og profesjonalitet.
           </p>
           <Link
-            href="/behandlinger"
+            href="/booking"
             className="btn-primary"
           >
             Book time
