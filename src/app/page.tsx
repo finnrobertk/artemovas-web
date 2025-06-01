@@ -16,11 +16,11 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="relative z-10 text-left text-white px-4 w-1/2 pl-12">
-          <h1 className="text-5xl md:text-6xl font-sans mb-6 text-secondary">
+        <div className="relative z-10 text-left text-white px-8 md:px-12 py-8 md:py-10 w-full md:w-3/4 lg:w-1/2 max-w-3xl bg-black/40 backdrop-blur-sm rounded-lg">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-sans mb-4 md:mb-6 text-secondary">
             Skjønnhetstjenester tilpasset deg
           </h1>
-          <p className="text-xl md:text-2xl mb-8">
+          <p className="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8">
             Spesialist på vipper og permanent makeup – for deg som verdsetter presisjon, kvalitet og varige resultater. Skreddersydde behandlinger utført med omtanke og profesjonalitet.
           </p>
           <Link
