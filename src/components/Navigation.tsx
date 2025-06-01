@@ -20,10 +20,9 @@ export default function Navigation() {
     <nav className="bg-primary">
       <div className="container mx-auto px-4">
         <div className="flex items-center h-16">
-          {/* Logo - Left */}
+          {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
-              {/* Juster width/height etter behov */}
               <Image
                   src="/images/logo.png"
                   alt="Logo"
@@ -33,7 +32,36 @@ export default function Navigation() {
               />
             </Link>
           </div>
-          
+
+          {/* Desktop Navigation Items */}
+          <div className="hidden md:flex items-center space-x-8 ml-8">
+            {/* Desktop Book Time Button */}
+            <Link
+              href="/booking"
+              className="btn-primary text-sm"
+            >
+              Book time
+            </Link>
+
+            {/* Menu Items */}
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`px-3 py-2 text-sm font-medium relative ${
+                  pathname === item.href
+                    ? 'text-secondary'
+                    : 'text-white hover:text-secondary transition-colors duration-200'
+                }`}
+              >
+                {item.name}
+                {pathname === item.href && (
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-secondary" />
+                )}
+              </Link>
+            ))}
+          </div>
+
           {/* Mobile menu button */}
           <div className="md:hidden ml-auto">
             <button
@@ -52,31 +80,6 @@ export default function Navigation() {
               )}
             </button>
           </div>
-
-          {/* Desktop menu - Centered */}
-          <div className="hidden md:flex flex-1 justify-center">
-            <div className="flex items-baseline space-x-8">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`px-3 py-2 text-sm font-medium relative ${
-                    pathname === item.href
-                      ? 'text-secondary'
-                      : 'text-white hover:text-secondary transition-colors duration-200'
-                  }`}
-                >
-                  {item.name}
-                  {pathname === item.href && (
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-secondary" />
-                  )}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Empty div for symmetry */}
-          <div className="hidden md:block flex-shrink-0 w-[200px]" />
         </div>
 
         {/* Mobile menu */}
@@ -99,6 +102,13 @@ export default function Navigation() {
                 )}
               </Link>
             ))}
+            <Link
+              href="/booking"
+              className="block px-3 py-2 text-base font-medium bg-secondary text-white rounded-md text-center mt-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Book time
+            </Link>
           </div>
         </div>
       </div>
