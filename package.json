@@ -24,10 +24,10 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@next/bundle-analyzer": "^15.2.4",
-    "@sanity/cli": "^3.81.0",
+    "@sanity/cli": "^3.90.0",
     "@sanity/client": "^6.28.3",
-    "@sanity/types": "^3.81.0",
-    "@sanity/vision": "^3.81.0",
+    "@sanity/types": "^3.90.0",
+    "@sanity/vision": "^3.90.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
